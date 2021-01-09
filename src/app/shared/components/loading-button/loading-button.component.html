@@ -1,0 +1,12 @@
+<div class="position-relative">
+  <div [class.invisible]="isLoading">
+    <ng-content></ng-content>
+  </div>
+  <mat-spinner
+    [class.invisible]="!isLoading"
+    [style.position]="'absolute'"
+    [style.top]="'calc(50% - ' + (diameter / 2) +'px)'"
+    [style.left]="'calc(50% - ' + (diameter / 2) + 'px)'"
+    [diameter]="diameter"
+  ></mat-spinner>
+</div>

@@ -1,0 +1,6 @@
+<mat-error *ngIf="error">
+  {{ error?.message || defaultError }}
+</mat-error>
+<mat-error *ngIf="!isFormValid && isFormSubmitted">
+  {{ formErrorMessage }}
+</mat-error>

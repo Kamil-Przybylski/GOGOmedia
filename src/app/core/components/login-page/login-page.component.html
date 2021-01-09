@@ -1,0 +1,34 @@
+<div class="size-100 d-flex-center flex-column app-bg-grey">
+  <mat-card class="app-mat-card-md">
+    <mat-card-header class="app-text-color">
+      <mat-card-title>Welcome!</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="px-3">
+      <app-login-form
+        #form
+        [isLoading]="isProcessing$ | async"
+        [httpError]="httpError$ | async"
+        (sumbit)="onLogin($event)"
+      ></app-login-form>
+    </mat-card-content>
+    <mat-card-actions class="px-4">
+      <div class="w-100 d-flex justify-content-end">
+        <button
+          mat-flat-button
+          color="primary"
+          [disabled]="isProcessing$ | async"
+          (click)="form.submitForm()"
+        >
+          <app-loading-button [isLoading]="isProcessing$ | async"
+            >SUBMIT</app-loading-button
+          >
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+  <div class="app-mat-card-md mt-3">
+    <h3 class="m-0">available users:</h3>
+    <h5 class="m-0">user1 : password</h5>
+    <h5 class="m-0">user2 : password</h5>
+  </div>
+</div>

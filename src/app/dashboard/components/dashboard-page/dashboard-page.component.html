@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>DASHBOARD</span>
+    <span class="w-100"></span>
+    <button mat-stroked-button color="basic" (click)="logout()">
+      <mat-icon aria-hidden="false" aria-label="Logout">exit_to_app</mat-icon>
+      Logout
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container pt-5">
+  <div class="pb-5">
+    <ng-container *ngIf="authUser$ | async as user">
+      <h1>USER INFO</h1>
+      <h3 class="m-0">Login: {{ user?.login }}</h3>
+      <h3 class="m-0">Name: {{ user?.name }}</h3>
+    </ng-container>
+  </div>
+  <div class="pb-3">
+    Test interceptor:
+    <button mat-flat-button (click)="testInterceptor()">Test</button>
+    <p>Notice: request should be failed beacouse of CORS.</p>
+  </div>
+  <div *ngIf="isTestError">
+    <mat-error>
+      Check in DevTools Network. Authorization: Bearer
+      token.(userName).(password)
+    </mat-error>
+  </div>
+</div>

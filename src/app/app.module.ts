@@ -33,7 +33,7 @@ const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<AppState>>(
     StoreModule.forRoot(REDUCER_TOKEN, {
       runtimeChecks: {
         strictActionImmutability: true,
-        strictActionSerializability: false,
+        strictActionSerializability: true,
         strictStateImmutability: true,
         strictStateSerializability: true,
       },

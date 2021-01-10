@@ -13,14 +13,12 @@ import {
 
 export interface AuthState {
   dataCondition: HttpState;
-  initialLoginSuccess: boolean;
   authUser: AuthUser | null;
   token: string | null;
 }
 
 const initialState: AuthState = {
   dataCondition: initialHttpState,
-  initialLoginSuccess: false,
   authUser: null,
   token: null,
 };

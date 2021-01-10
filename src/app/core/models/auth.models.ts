@@ -31,7 +31,7 @@ export class AuthSignInResDto implements AuthSignInRes {
   public authUser: AuthUser;
   public token: string;
 
-  constructor(response: { authUser: AuthUser; token: string }) {
+  constructor(response: AuthSignInRes) {
     this.authUser = response.authUser;
     this.token = response.token;
   }
